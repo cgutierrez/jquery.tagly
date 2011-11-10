@@ -1,6 +1,6 @@
-#tagsinput { border: 1px solid #ccc; padding: 10px; width: 500px; }
+#tags { border: 1px solid #ccc; padding: 10px; width: 500px; height: 100px; }
 .tag-list { margin: 0px; padding: 0px; list-style: none; }
 .tag-list li { display: inline-block; margin-right: 4px; margin-bottom: 12px; }
-.tag-list input[type="text"] { border: 0px; width: 75px; font-size: 12px; }
+.tag-list input[type="text"] { border: 0px; width: 75px; font-size: 12px; outline: none; }
 .tag-list .tag-label { background: #ccc; color: #444; padding: 5px; border-radius: 2px; }
 .tag-list .tag-remove { margin-left: 10px; cursor: pointer; }

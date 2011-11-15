@@ -33,7 +33,7 @@
     };
 
     var Tagly = function($container, opts) {
-        
+
         this.$container = $container.data('tagly', this);
         this.$list = $container.find('ul');
         this.opts = opts;
@@ -57,7 +57,7 @@
         var opts = this.opts,
             $container = this.$container,
             $lastli = this.$container.find('li:last');
-            
+
         var markup = '<li>\
                         <span class="' + opts.labelClass + '">\
                         <span class="' + opts.labelTextClass + '">'+ val + '</span>\
@@ -68,25 +68,25 @@
 
         $lastli.before(markup);
         $lastli.find('input').val("");
-        
+
         $lastli.prev().find('.' + opts.removeClass).bind('click.tagly', function(e) {
             $(this).parents('li').remove();
         });
     };
-    
-    
+
+
     Tagly.prototype.startNew = function() {
-        
+
         var opts = this.opts,
             $list = this.$list;
-        
+
         var markup = '<li>\
                         <input type="text" class="' + opts.newClass + '"/>\
                       </li>';
 
         var $input = $list.append(markup).find('.' + opts.newClass),
             self = this;
-            
+
         $input.bind('keydown.tagly', function(e) {
             if (e.keyCode === 13 || e.keyCode === 9) {
                 e.preventDefault();
@@ -94,7 +94,7 @@
             }
         }).focus();
     };
-     
+
     Tagly.prototype.onNewKeydown = function() {
         var opts = this.opts,
             $input = this.$list.find('.' + opts.newClass);
@@ -115,10 +115,14 @@
         var args = arguments,
             cmd = (args.length) ? args[0] : {},
             cmdtype = typeof cmd;
-        
+
         if (cmdtype === "object" || !cmd) {
             return this.each(function(i, elem) {
-                (new Tagly($(elem), $.extend(defaults, cmd || {})));
+                var tagly = (new Tagly($(elem), $.extend(defaults, cmd || {})));
+                if ("tags" in cmd) {
+                    tagly.populate(cmd.tags);
+                }
+
             });
         } else if(cmdtype === "string" && cmd in Tagly.prototype) {
             return this.each(function(i, elem) {

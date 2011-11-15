@@ -2,33 +2,39 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title>cgutierrez/tag.ly @ GitHub</title>
+    <title>Tagly for jQuery</title>
     <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <a href="https://github.com/cgutierrez/tag.ly">
+    <a href="https://github.com/cgutierrez/jquery.tagly">
         <img class="forkme" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
     </a>
 
     <div id="container">
 
-        <h1><a href="https://github.com/cgutierrez/tag.ly">tag.ly</a></h1>
+        <h1><a href="https://github.com/cgutierrez/jquery.tagly">tagly</a></h1>
 
         <div class="description">
-        Tag.ly is a simple jQuery plugin for tag entry in forms. The goal is to be easy to style and easy to populate with existing items.
+        Tagly is a simple jQuery plugin for tag entry in forms. The goal is to be easy to style and easy to populate with existing tags.
         </div>
 
         <h2>Usage</h2>
-        <p>Below is basic markup to get started with the Tag.ly plugin. Simply provide an empty div and tagly will create the rest of the necessary markup.</p>
-
         <script src="https://gist.github.com/1353984.js?file=example.html"></script>
-
-        <p>Tag.ly uses an unordered list for display and aims to ba as easy to style as possible.</p>
-
         <script src="https://gist.github.com/1353984.js?file=styles.css"></script>
+        <script src="https://gist.github.com/1353984.js?file=script.js"></script>
 
         <h2>Options</h2>
+        <ul class="options">
+            <li><strong>fieldName</strong> - the name of the field used for tags. Tags are submitted using array syntax. ie: tag[]</li>
+            <li><strong>listClass</strong> - the class applied to the list</li>
+            <li><strong>listClass</strong> - the class applied to the container of each tag</li>
+            <li><strong>labelTextClass</strong> - the class applied to the text of the tag</li>
+            <li><strong>newClass</strong> - the class applied to the input for new tags</li>
+            <li><strong>removeClass</strong> - the class applied to the remove button for each tag</li>
+            <li><strong>removeContent</strong> - the content of the remove button</li>
+            <li><strong>tags</strong> - a list of tags to pre populate tagly</li>
+        </ul>
 
         <h2>Authors</h2>
         <p>Chris Gutierrez (cdotgutierrez at gmail dot com)</p>
@@ -38,10 +44,6 @@
         <a href="https://github.com/cgutierrez/tag.ly/zipball/master">zip</a> or
         <a href="https://github.com/cgutierrez/tag.ly/tarball/master">tar formats.
         </p>
-
-        <div class="footer">
-        get the source code on GitHub : <a href="https://github.com/cgutierrez/tag.ly">cgutierrez/tag.ly</a>
-        </div>
 
     </div>
 </body>
